@@ -16,14 +16,12 @@ const Country = () => {
   const router = useRouter();
   const fetchSingleCountry = async (name) => {
     const res = await axios.get(
-      `https://restcountries.com/v3.1/name/${
-        name ? name : router.query.country
-      }?fullText=true`
+      `https://restcountries.com/v3.1/name/${name}?fullText=true`
     );
     setSingleCountry(res.data);
   };
   useEffect(() => {
-    fetchSingleCountry();
+    fetchSingleCountry(router.query.country);
   }, []);
 
   useEffect(() => {
