@@ -1,0 +1,62 @@
+html,
+body {
+  overflow-x: hidden;
+  @apply font-nunito-sans;
+}
+
+* {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+body {
+  @apply bg-very-light-gray dark:bg-very-dark-blue-bg;
+}
+
+.wrapper {
+  max-width: 1300px;
+  width: 90%;
+  @apply mx-auto;
+}
+
+.search-bar {
+  @apply bg-white relative rounded-md overflow-hidden
+   flex items-center md:w-1/2 dark:bg-dark-blue;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.123);
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.123);
+}
+
+.search-bar:focus-within {
+  -webkit-box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.158);
+          box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.158);
+}
+
+.search-bar .search-icon {
+  @apply text-dark-gray dark:dark:text-very-light-gray text-lg absolute my-auto top-0 bottom-0 left-5;
+}
+
+.search-bar input[type="search"] {
+  @apply py-5 ml-14 pr-5 flex-1 outline-none 
+    text-dark-blue dark:bg-dark-blue
+    dark:text-white;
+}
+
+.countries-cards-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3.5rem;
+}
+
+.active-region {
+  @apply text-yellow-500;
+}
+
+.back-btn-shadow {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
+}
+/*# sourceMappingURL=styles.css.map */

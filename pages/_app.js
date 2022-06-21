@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import Header from "../components/Header";
+import "../styles/css/globals.css";
+import "../styles/css/styles.css";
+import AppProvider from "../context/AppProvider";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <AppProvider>
+        <Header />
+        <Component {...pageProps} />
+      </AppProvider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
