@@ -21,8 +21,10 @@ const Country = () => {
     setSingleCountry(res.data);
   };
   useEffect(() => {
-    fetchSingleCountry(router.query.country);
-  }, []);
+    if (router.isReady) {
+      fetchSingleCountry(router.query.country);
+    }
+  }, [router.isReady, router.query.country]);
 
   useEffect(() => {
     if (state.countries.length && singleCountry) {
