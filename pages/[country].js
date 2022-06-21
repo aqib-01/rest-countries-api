@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { motion } from "framer-motion";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -42,23 +42,35 @@ const Country = () => {
         <Spinner />
       ) : (
         <div className="wrapper">
-          <button
+          <motion.button
+            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: -100, opacity: 0 }}
             onClick={() => router.push("/")}
             className="my-10 bg-white px-6 py-2 rounded-md  text-dark-blue
           back-btn-shadow hover:opacity-60 dark:bg-dark-blue dark:text-white"
           >
             <FontAwesomeIcon icon={faArrowLeft} />
             <span className="ml-3">Back</span>
-          </button>
+          </motion.button>
           <div className="lg:flex items-center max-w-xl mx-auto lg:max-w-none mb-10">
-            <div className="max-w-lg lg:max-w-none lg:mr-14 flex-1">
+            <motion.div
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: -500, opacity: 0 }}
+              transition={{ delay: 0.5, type: "tween", ease: "easeOut" }}
+              className="max-w-lg lg:max-w-none lg:mr-14 flex-1"
+            >
               <img
                 className="w-full max-w-full object-cover"
                 src={singleCountry[0].flags.png}
                 alt={`Flag of ${singleCountry[0].name.common}`}
               />
-            </div>
-            <div className="my-14 lg:my-0 flex-1">
+            </motion.div>
+            <motion.div
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              transition={{ delay: 0.5, type: "tween", ease: "easeOut" }}
+              className="my-14 lg:my-0 flex-1"
+            >
               <h3
                 className="text-xl lg:text-2xl mb-6 font-extrabold 
              text-very-dark-blue-text dark:text-white"
@@ -189,7 +201,7 @@ const Country = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       )}
