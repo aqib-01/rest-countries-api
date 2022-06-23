@@ -20,7 +20,6 @@ const SearchBar = () => {
         opacity: 1,
       }}
       className="search-bar "
-      tabIndex={0}
     >
       <FontAwesomeIcon icon={faSearch} className="search-icon " />
       <input
