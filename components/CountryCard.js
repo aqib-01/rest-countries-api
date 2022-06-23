@@ -37,13 +37,19 @@ const CountryCard = ({ countryData }) => {
   }, [control, inView]);
   return (
     <>
-      <motion.div
+      <motion.button
         onClick={() => router.push(`/${name.common.toLowerCase()}`)}
         ref={ref}
         variants={countryCardVariants}
         animate={control}
         initial={"initial"}
         whileHover={{
+          y: -5,
+          boxShadow: darkMode
+            ? "0 0 10px rgb(255, 255, 255, .4)"
+            : "0 0 10px rgb(0, 0, 0, .4)",
+        }}
+        whileFocus={{
           y: -5,
           boxShadow: darkMode
             ? "0 0 10px rgb(255, 255, 255, .4)"
@@ -90,7 +96,7 @@ const CountryCard = ({ countryData }) => {
             </span>
           </div>
         </div>
-      </motion.div>
+      </motion.button>
     </>
   );
 };
