@@ -28,7 +28,7 @@ export const reducer = (state, action) => {
   if (action.type === "UPDATE_SEARCH_VALUE") {
     return {
       ...state,
-      searchCountryValue: action.payload.toLowerCase().trim(),
+      searchCountryValue: action.payload.toLowerCase(),
     };
   }
   if (action.type === "SEARCH_COUNTRIES") {

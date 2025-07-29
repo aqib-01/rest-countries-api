@@ -7,6 +7,7 @@ body {
   transition: color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
+
 body {
   @apply bg-very-light-gray dark:bg-very-dark-blue-bg;
 }

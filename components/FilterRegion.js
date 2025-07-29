@@ -49,23 +49,23 @@ const FilterRegion = () => {
         x: 0,
         opacity: 1,
       }}
-      className="mt-10 md:m-0 relative w-fit"
+      className="mt-10 mx-auto md:m-0 relative w-fit"
     >
       <button
         ref={filterRegionBtnRef}
         onClick={toggleFilterModal}
         className="bg-white dark:bg-dark-blue  shadow-md px-10 py-5 rounded-md
-       flex items-center hover:opacity-60 focus:opacity-60 "
+       flex items-center hover:opacity-60 focus:opacity-60"
       >
         <span className="text-dark-blue dark:text-white font-semibold mr-4">
-          Filter by Region
+          {activeFilteredRegion !== "none" ? <>Region: <span className="text-dark-gray">{activeFilteredRegion}</span></> : "Filter by region"}
         </span>
         <FontAwesomeIcon
           icon={faChevronDown}
           className="text-dark-blue dark:text-white"
         />
       </button>
-      {activeFilteredRegion !== "none" && (
+      {/* {activeFilteredRegion !== "none" && (
         <motion.div
           animate={{ scale: 1, opacity: 1 }}
           initial={{
@@ -76,14 +76,14 @@ const FilterRegion = () => {
             
             delay: 0.5,
           }}
-          className="absolute top-full left-0 mt-2 "
+          className="absolute top-full mt-2"
         >
           <span className="text-sm -z-10 text-dark-blue dark:text-very-light-gray font-semibold">
             Active Region:
           </span>
           <span className="ml-3 text-dark-gray">{activeFilteredRegion}</span>
         </motion.div>
-      )}
+      )} */}
 
       <AnimatePresence>
         {isFilterModalOpen && (

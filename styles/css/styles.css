@@ -14,7 +14,10 @@ body {
 body {
   @apply bg-very-light-gray dark:bg-very-dark-blue-bg;
 }
-
+input {
+  appearance: none;
+  background-color: white;
+}
 .wrapper {
   max-width: 1300px;
   width: 90%;
